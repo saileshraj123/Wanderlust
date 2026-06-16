@@ -104,6 +104,10 @@ app.use((req, res, next) => {
 
 
 
+app.get("/", (req, res) => {
+    res.render("home.ejs");
+});
+
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
@@ -120,6 +124,16 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error.ejs", { message });
 })
 
-app.listen(8080, () => {
-    console.log("server is listening to the port 8080");
-})
+
+
+
+// app.listen(8080, () => {
+//     console.log("server is listening to the port 8080");
+// })
+
+
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log("server is listening on", PORT);
+});
