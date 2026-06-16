@@ -1,0 +1,48 @@
+.star-rating {
+  direction: rtl;
+  display: inline-flex;
+  gap: 5px;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* hover effect */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: gold;
+}
+
+/* selected stars */
+.star-rating input:checked ~ label {
+  color: gold;
+}
+
+/* ⭐ FLASH ANIMATION ON CLICK */
+.star-rating input:checked + label {
+  animation: flashStar 0.4s ease;
+}
+
+/* keyframes */
+@keyframes flashStar {
+  0% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  50% {
+    transform: scale(1.4);
+    text-shadow: 0 0 10px gold;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px gold;
+  }
+}
