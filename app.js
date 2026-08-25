@@ -76,8 +76,8 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-console.log("DB URL:", process.env.ATLASDB_URL);
-console.log("SECRET:", process.env.SECRET);
+// console.log("DB URL:", process.env.ATLASDB_URL);
+// console.log("SECRET:", process.env.SECRET);
 
 
 async function main() {
